@@ -1,0 +1,30 @@
+# futtatás:                 docker-compose up --build
+# futtatás háttérben:       docker-compose down
+# DB tartalmának törlése:   docker-compose down --volumes
+
+version: '3'
+
+services:
+
+  # MySQL adatbázis
+  UsedCars-db:
+    image: mysql:5.7.24
+    container_name: UsedCars-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootPassword
+      MYSQL_USER: quiz
+      MYSQL_PASSWORD: quizPassword
+      MYSQL_DATABASE: quiz
+    ports:
+      - 3336:3306
+    # inicializálás:
+    #   docker exec -i UsedCars-db mysql -u UsedCars -pUsedCarsPassword <setup.sql
+
+  usedcars-web:
+    build: .
+    container_name: UsedCars-web
+    ports:
+      - 8080:8080
+    environment:
+      PROFILE: "prod"
+

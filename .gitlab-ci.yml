@@ -1,0 +1,24 @@
+stages:
+  - quality
+  - docker
+
+no_errors:
+  stage: quality
+  image: gradle:jdk8-openj9
+  script:
+    - echo "Performing gradle check..."
+    - gradle check
+    - echo "gradle check DONE."
+
+push:
+  stage: docker
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  only:
+    - master
+    - Lab6
