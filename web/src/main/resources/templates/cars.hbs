@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>Cars cars cars</title>
+    </head>
+    <body>
+        {{#each this}}
+            <div>
+                <p class="name">Model: {{carModel}}</p>
+                <p>OwnerID: {{ownerId}}</p>
+                <p>Km: {{kilometers}}</p>
+                <p>HP: {{horsePower}}</p>
+                <p class="date">Constructed: {{startDate}}</p>
+                <p>Owner: {{owner.name}}</p>
+<!--                here would come smth for each owner? idk i dont use that its dumb-->
+            </div>
+        {{/each}}
+
+        <form action="cars" method="POST">
+            <div>
+                <label for="Kilometers">Kilometers int</label>
+                <input type="text" name="kilometers" id="kilometers" class="form-control">
+            </div>
+             <div>
+                  <label for="HorsePower">HorsePower int</label>
+                  <input type="text" name="horsePower" id="horsePower" class="form-control">
+             </div>
+             <div>
+                  <label for="ownerId">ownerId int</label>
+                  <input type="text" name="ownerId" id="ownerId" class="form-control">
+             </div>
+            <div>
+                <label for="carModel">carModel string</label>
+                <input type="text" name="carModel" id="carModel" class="form-control">
+            </div>
+            <div>
+                <label for="startDate">startDate int</label>
+                <input type="text" name="startDate" id="startDate" class="form-control">
+            </div>
+            <input type="submit" value="New entry">
+        </form>
+
+        <form action="login" method="GET">
+            <input type="submit" value="disconnect">
+        </form>
+
+        <form>
+            <label for="search">Search by car model</label>
+            <input id="search" name="search" type="text">
+            <button type="submit">Search</button>
+        </form>
+    </body>
+</html>

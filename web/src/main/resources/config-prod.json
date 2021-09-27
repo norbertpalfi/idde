@@ -1,0 +1,9 @@
+{
+  "daoType" : "jdbc",
+  "driverClassName": "com.mysql.jdbc.Driver",
+  "jdbcUrl": "jdbc:mysql://UsedCars-db/UsedCars",
+  "username": "UsedCars",
+  "password": "UsedCarsPassword",
+  "logQueries": true,
+  "logUpdates": true
+}

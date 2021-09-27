@@ -1,0 +1,11 @@
+div {
+    padding-bottom: 20px;
+}
+
+.name {
+    font-size: 120%;
+}
+
+.date {
+    color: grey;
+}

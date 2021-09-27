@@ -1,0 +1,23 @@
+dependencies {
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    runtime group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    runtime group: 'mysql', name: 'mysql-connector-java', version: '5.1.49'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.0-rc2'
+
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '3.4.5'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    runtime group: 'org.hibernate', name: 'hibernate-core', version: '5.4.25.Final'
+
+    // https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
+    compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
+
+}
